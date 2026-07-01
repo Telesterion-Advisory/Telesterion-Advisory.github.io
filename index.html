@@ -13,6 +13,10 @@
 
   :root {
     --ink: #1a1814;
+    --green-dark: #04342C;
+    --green-mid: #085041;
+    --green-sec: #0F6E56;
+    --green-accent: #5DCAA5;
     --ink-soft: #3d3930;
     --ink-muted: #7a7468;
     --sand: #f5f0e8;
@@ -464,10 +468,10 @@
   #process { background: var(--white); }
 
   .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
+    display: flex;
+    flex-direction: column;
     margin-top: 4rem;
+    max-width: 720px;
     position: relative;
   }
 
@@ -475,18 +479,23 @@
     content: '';
     position: absolute;
     top: 2rem;
-    left: 12%;
-    right: 12%;
-    height: 1px;
+    left: 1.95rem;
+    bottom: 2rem;
+    width: 1px;
     background: var(--sand-deep);
     z-index: 0;
   }
 
   .step {
-    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 2rem;
+    padding: 0 0 2.5rem 0;
     position: relative;
     z-index: 1;
   }
+
+  .step:last-child { padding-bottom: 0; }
 
   .step-dot {
     width: 4rem;
@@ -497,7 +506,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    flex-shrink: 0;
     font-family: var(--serif);
     font-size: 1.1rem;
     font-weight: 600;
@@ -511,18 +520,20 @@
     color: var(--white);
   }
 
+  .step-content { padding-top: 0.75rem; }
+
   .step-title {
     font-family: var(--serif);
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .step-desc {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--ink-muted);
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   /* INDUSTRIES */
@@ -913,26 +924,23 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo">Telesterion<span>.</span></a>
+  <a href="#" class="nav-logo" style="font-family: var(--serif); font-weight:600; font-size:1.25rem; color:#04342C; text-decoration:none;">Telesterion<span style="color:#b8924a;">.</span><span style="font-size:0.55rem; letter-spacing:0.2em; color:#0F6E56; margin-left:0.4rem; vertical-align:middle; font-family:var(--sans);">ADVISORY</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#team">Team</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Business Development Advisory</div>
-    <h1 class="hero-headline">
-      Where<br>
-      strategy<br>
-      <em>meets</em> growth
-    </h1>
-    <p class="hero-sub">We help ambitious small and medium enterprises unlock their next phase of growth — through clarity, insight, and decisive action.</p>
+    <div class="hero-eyebrow">Strategy · Communications · Partnerships</div>
+    <h1 class="hero-headline">Business<br>strategy<br><em>for all</em></h1>
+    <p class="hero-sub">From startups finding their footing to established organizations ready for a turnaround — we help owners and directors get back to doing what they do best.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Start a Conversation</a>
       <a href="#services" class="btn-ghost">Our Services</a>
@@ -979,16 +987,16 @@
 
     <div class="hero-stat-bar">
       <div class="hero-stat">
-        <div class="hero-stat-num">15<em>+</em></div>
-        <div class="hero-stat-label">Years Experience</div>
+        <div class="hero-stat-num">8<em>+</em></div>
+        <div class="hero-stat-label">Years Consulting Experience</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">320<em>+</em></div>
-        <div class="hero-stat-label">Clients Served</div>
+        <div class="hero-stat-num">10<em>+</em></div>
+        <div class="hero-stat-label">Industries Served</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">94<em>%</em></div>
-        <div class="hero-stat-label">Client Retention</div>
+        <div class="hero-stat-num">Portland<em>,</em></div>
+        <div class="hero-stat-label">Oregon</div>
       </div>
     </div>
   </div>
@@ -997,23 +1005,22 @@
 <!-- MARQUEE -->
 <div class="marquee-strip">
   <div class="marquee-inner">
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Strategic Planning</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Market Expansion</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Revenue Growth</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Partnership Development</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Financial Advisory</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Operational Excellence</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Leadership Coaching</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Brand Positioning</span>
-    <!-- Duplicate for loop -->
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Strategic Planning</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Market Expansion</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Revenue Growth</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Partnership Development</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Financial Advisory</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Operational Excellence</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Leadership Coaching</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Brand Positioning</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Jewelry &amp; Retail</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Behavioral Health</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Arts &amp; Performance</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Psychotherapy</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Acupuncture &amp; Wellness</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Music &amp; Venues</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Mortgage &amp; Finance</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Nonprofit &amp; Mission-Driven</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Jewelry &amp; Retail</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Behavioral Health</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Arts &amp; Performance</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Psychotherapy</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Acupuncture &amp; Wellness</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Music &amp; Venues</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Mortgage &amp; Finance</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Nonprofit &amp; Mission-Driven</span>
   </div>
 </div>
 
@@ -1021,25 +1028,25 @@
 <section id="about">
   <div class="about-text fade-up">
     <div class="section-label">Our Story</div>
-    <h2 class="section-title">Built for the<br><em>bold founder</em></h2>
-    <p>Telesterion was founded on a simple belief: small businesses deserve the same calibre of strategic counsel that Fortune 500 companies take for granted. We bring the rigour of enterprise consulting to ambitious entrepreneurs and growing teams.</p>
-    <p>Our advisors have sat in the founder's chair. We've navigated market downturns, scaled teams, secured capital, and built exit strategies from the ground up. That lived experience shapes every recommendation we make.</p>
+    <h2 class="section-title">An ancient idea.<br><em>A modern practice.</em></h2>
+    <p>The Telesterion was a great hall near ancient Athens where something remarkable happened for more than 2,000 years. People of every walk of life — young and old, slaves and Roman emperors — would enter, and leave changed. They returned to all corners of the world carrying new knowledge and a fearlessness that informed everyone around them.</p>
+    <p>That journey was an inflection point — and those who made it were never the same. That is what good strategy does. Telesterion Advisory exists to create those moments for organizations of every kind: startups building from scratch, and going concerns ready for a turnaround. As a business generalist, Joe works across industries and challenges, with particular depth in strategy, communications, and partnerships — the three levers that most reliably free owners and directors to do what they do best.</p>
 
     <div class="about-values">
       <div class="value-item">
-        <div class="value-name">Candour</div>
-        <div class="value-desc">We tell you what you need to hear, not what you want to hear.</div>
+        <div class="value-name">Abundance</div>
+        <div class="value-desc">We help build lasting wealth — in capacity, confidence, and resources.</div>
       </div>
       <div class="value-item">
-        <div class="value-name">Precision</div>
-        <div class="value-desc">Every strategy is tailored. No templates, no shortcuts.</div>
+        <div class="value-name">Fertility</div>
+        <div class="value-desc">We create the conditions for organizations to flourish across many seasons.</div>
       </div>
       <div class="value-item">
-        <div class="value-name">Partnership</div>
-        <div class="value-desc">Your success is our reputation. We're in it together.</div>
+        <div class="value-name">Possibility</div>
+        <div class="value-desc">We listen before we advise, and explore before we commit.</div>
       </div>
       <div class="value-item">
-        <div class="value-name">Execution</div>
+        <div class="value-name">Intention</div>
         <div class="value-desc">Strategy without action is just theory. We bridge that gap.</div>
       </div>
     </div>
@@ -1047,8 +1054,8 @@
 
   <div class="about-visual fade-up">
     <div class="about-card">
-      <p class="quote-text">"The best investment a growing business can make is in clarity — about where it's going, why, and precisely how to get there."</p>
-      <div class="quote-attr">— Eleanor Voss, Founder & Managing Director</div>
+      <p class="quote-text">"Strategy isn't a luxury for large organizations. It's the difference between drifting and moving with intention — and every organization deserves that."</p>
+      <div class="quote-attr">— Joe, Founder, Telesterion Advisory</div>
     </div>
   </div>
 </section>
@@ -1060,7 +1067,7 @@
       <div class="section-label">What We Do</div>
       <h2 class="section-title">Services<br>built for <em>growth</em></h2>
     </div>
-    <p class="services-intro">From initial strategy to full-scale implementation, we offer a suite of services designed to move your business forward — at every stage of its journey.</p>
+    <p class="services-intro">As a business generalist, Telesterion Advisory works with startups and going concerns alike. Whether you need a strategy built from the ground up or a turnaround that gets your organization moving again, our work centers on three core strengths: strategy, communications, and partnerships.</p>
   </div>
 
   <div class="services-grid fade-up">
@@ -1073,20 +1080,20 @@
     <div class="service-card">
       <div class="service-num">02</div>
       <div class="service-line"></div>
-      <div class="service-name">Market Entry & Expansion</div>
-      <div class="service-desc">Research-driven market analysis, go-to-market strategy, and execution support for new geographies or product lines.</div>
+      <div class="service-name">Stakeholder Engagement & Partnership Building</div>
+      <div class="service-desc">Identifying, cultivating, and structuring the relationships that move organizations forward — from community partners to institutional allies and funders.</div>
     </div>
     <div class="service-card">
       <div class="service-num">03</div>
       <div class="service-line"></div>
-      <div class="service-name">Revenue Architecture</div>
-      <div class="service-desc">Sales process design, pricing strategy, channel development, and revenue model optimisation for sustainable growth.</div>
+      <div class="service-name">Communications & Advertising</div>
+      <div class="service-desc">Crafting the messages, channels, and campaigns that build trust, grow audiences, and position your organization with clarity and conviction.</div>
     </div>
     <div class="service-card">
       <div class="service-num">04</div>
       <div class="service-line"></div>
-      <div class="service-name">Partnership & M&A Advisory</div>
-      <div class="service-desc">Identifying, structuring, and negotiating strategic partnerships, joint ventures, acquisitions, and exit opportunities.</div>
+      <div class="service-name">Turnarounds</div>
+      <div class="service-desc">For going concerns that have lost momentum — we diagnose what's holding the organization back and build a clear path to renewed health and performance.</div>
     </div>
     <div class="service-card">
       <div class="service-num">05</div>
@@ -1113,180 +1120,38 @@
   <div class="process-steps fade-up">
     <div class="step">
       <div class="step-dot">I</div>
-      <div class="step-title">Discovery</div>
-      <div class="step-desc">A deep-dive into your business, market, and goals. We listen before we advise — always.</div>
+      <div class="step-content">
+        <div class="step-title">Discovery</div>
+        <div class="step-desc">A deep-dive into your organization, market, and stakeholders. We listen before we advise — always.</div>
+      </div>
     </div>
     <div class="step">
       <div class="step-dot">II</div>
-      <div class="step-title">Diagnosis</div>
-      <div class="step-desc">Data-backed analysis reveals where the real opportunities and obstacles lie in your path to growth.</div>
+      <div class="step-content">
+        <div class="step-title">Diagnosis</div>
+        <div class="step-desc">Honest analysis of where the real opportunities and obstacles lie — no sugarcoating, no shortcuts.</div>
+      </div>
     </div>
     <div class="step">
       <div class="step-dot">III</div>
-      <div class="step-title">Strategy</div>
-      <div class="step-desc">A clear, prioritised plan of action built around your specific context — not a generic playbook.</div>
+      <div class="step-content">
+        <div class="step-title">Goals → Objectives → Strategies → Tactics</div>
+        <div class="step-desc">We build a clear, layered plan — from the big picture down to the specific actions that move the needle.</div>
+      </div>
     </div>
     <div class="step">
       <div class="step-dot">IV</div>
-      <div class="step-title">Execution</div>
-      <div class="step-desc">We work alongside your team to implement, measure, and refine until results are real.</div>
-    </div>
-  </div>
-</section>
-
-<!-- INDUSTRIES -->
-<section id="industries">
-  <div class="fade-up">
-    <div class="section-label">Sectors</div>
-    <h2 class="section-title">Industries we <em>serve</em></h2>
-  </div>
-
-  <div class="industries-grid fade-up">
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Musicians</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Professional Services</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Healthcare & Wellness</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Retail & E-commerce</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Makers</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Financial Services</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Hospitality & Food</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Real Estate</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Education & Training</div>
-    </div>
-    <div class="industry-item">
-      <span class="industry-icon">⬡</span>
-      <div class="industry-name">Media & Creative</div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section id="results">
-  <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 0;">
-    <div class="section-label" style="justify-content: center;">Impact</div>
-    <h2 class="section-title">Results that<br><em>speak for themselves</em></h2>
-  </div>
-
-  <div class="results-grid fade-up">
-    <div class="result-card">
-      <div class="result-num">2.4<span>×</span></div>
-      <div class="result-label">Average revenue growth within 18 months of engagement</div>
-    </div>
-    <div class="result-card">
-      <div class="result-num">£180<span>M</span></div>
-      <div class="result-label">Total client revenue generated or influenced since 2010</div>
-    </div>
-    <div class="result-card">
-      <div class="result-num">47<span>+</span></div>
-      <div class="result-label">Successful exits, acquisitions, and partnership deals closed</div>
-    </div>
-    <div class="result-card">
-      <div class="result-num">320<span>+</span></div>
-      <div class="result-label">Small and medium businesses advised across 12 countries</div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="fade-up">
-    <div class="section-label">Client Voices</div>
-    <h2 class="section-title">What our clients <em>say</em></h2>
-  </div>
-
-  <div class="testimonials-grid fade-up">
-    <div class="testimonial-card">
-      <span class="testimonial-quote-mark">"</span>
-      <p class="testimonial-text">Telesterion gave us the clarity we had been searching for two years. Within six months, we had doubled our enterprise pipeline and closed our first major partnership deal.</p>
-      <div class="testimonial-person">
-        <div class="testimonial-avatar">JL</div>
-        <div>
-          <div class="testimonial-name">James Lawton</div>
-          <div class="testimonial-role">CEO, Helix Software</div>
-        </div>
+      <div class="step-content">
+        <div class="step-title">Implementation</div>
+        <div class="step-desc">We work alongside your team to put the plan into motion — staying engaged through every challenge.</div>
       </div>
     </div>
-    <div class="testimonial-card">
-      <span class="testimonial-quote-mark">"</span>
-      <p class="testimonial-text">They don't just hand you a report and leave. The team was embedded with us through every difficult conversation. That accountability changed everything for us.</p>
-      <div class="testimonial-person">
-        <div class="testimonial-avatar">SR</div>
-        <div>
-          <div class="testimonial-name">Sasha Reeves</div>
-          <div class="testimonial-role">Founder, Grove Wellness Co.</div>
-        </div>
+    <div class="step">
+      <div class="step-dot">V</div>
+      <div class="step-content">
+        <div class="step-title">Evaluation & Learning</div>
+        <div class="step-desc">We measure what worked, learn from what didn't, and refine — so every engagement makes the next one stronger.</div>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <span class="testimonial-quote-mark">"</span>
-      <p class="testimonial-text">We were preparing for our first international expansion and had no idea where to start. Telesterion's market entry work was surgical — precise, grounded, and genuinely transformative.</p>
-      <div class="testimonial-person">
-        <div class="testimonial-avatar">MP</div>
-        <div>
-          <div class="testimonial-name">Maria Pereira</div>
-          <div class="testimonial-role">MD, Castella Imports</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section id="team">
-  <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 0;">
-    <div class="section-label" style="justify-content: center;">The Team</div>
-    <h2 class="section-title">Advisors who've<br><em>been there</em></h2>
-  </div>
-
-  <div class="team-grid fade-up">
-    <div class="team-card">
-      <div class="team-photo">EV</div>
-      <div class="team-name">Eleanor Voss</div>
-      <div class="team-role">Founder & MD</div>
-      <div class="team-bio">Former McKinsey partner. 20 years advising growth-stage businesses across Europe and North America.</div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">DK</div>
-      <div class="team-name">Daniel Kurtz</div>
-      <div class="team-role">Head of Strategy</div>
-      <div class="team-bio">Previously CFO at two SaaS companies. Specialist in revenue architecture and financial modelling.</div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">AT</div>
-      <div class="team-name">Amara Tekeste</div>
-      <div class="team-role">Market Expansion Lead</div>
-      <div class="team-bio">Launched brands in 14 markets. Deep expertise in go-to-market strategy for B2B and B2C sectors.</div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">RO</div>
-      <div class="team-name">Rafael Ortega</div>
-      <div class="team-role">Partnerships Director</div>
-      <div class="team-bio">Built and closed $90M+ in strategic deals. Specialises in M&A readiness and partnership negotiation.</div>
     </div>
   </div>
 </section>
@@ -1299,9 +1164,9 @@
     <p style="color: rgba(255,255,255,0.55); margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.8;">Every engagement begins with a no-obligation discovery call. Tell us where you are, and we'll explore where you could go.</p>
 
     <div class="contact-detail">
-      <a href="mailto:hello@telesterion.net">hello@telesterionadvisory.com</a>
-      <a href="tel:+442071234567">+44 (0)207 123 4567</a>
-      <a href="#">14 Finsbury Square, London EC2A 1BR</a>
+      <a href="mailto:moderntelesterion@gmail.com">moderntelesterion@gmail.com</a>
+      <a href="tel:+15038780152">(503) 878-0152</a>
+      <a href="#">Portland, Oregon</a>
     </div>
   </div>
 
@@ -1351,12 +1216,12 @@
 <footer>
   <div class="footer-logo">Telesterion<span>.</span> Advisory</div>
   <ul class="footer-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    
   </ul>
-  <div>© 2026 Telesterion Advisory Ltd. All rights reserved.</div>
+  <div>© 2026 Telesterion Advisory. All rights reserved.</div>
 </footer>
 
 <script>

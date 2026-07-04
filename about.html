@@ -298,16 +298,14 @@
     border-radius: 4px;
     background: var(--sand);
     border: 1px solid var(--sand-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    text-align: center;
-    padding: 1rem;
+    overflow: hidden;
+  }
+  .founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
   .founder-name {
@@ -613,9 +611,9 @@
   </div>
 
   <div class="founder-wrap fade-up">
-    <div class="founder-photo">Photo<br>Coming Soon</div>
+    <div class="founder-photo"><img src="assets/joe-bazeghi.jpg" alt="Joe Bazeghi, Founder of Telesterion Advisory"></div>
     <div>
-      <div class="founder-name">Joe [Last Name]</div>
+      <div class="founder-name">Joe Bazeghi</div>
       <div class="founder-role">Founder & Principal Consultant</div>
       <div class="founder-bio">
         <p>Joe founded Telesterion Advisory to bring the same rigor and honesty large organizations expect from their advisors to businesses of every size. From 2016 to 2022, he worked independently as a consultant across a dozen clients spanning more than ten industries — from jewelry and retail to behavioral health, arts and performance, and nonprofit organizations — building the generalist range that now anchors the practice.</p>
@@ -625,11 +623,11 @@
       <div class="founder-credentials">
         <div>
           <div class="credential-label">Education</div>
-          <div class="credential-value">MBA, [University Name]</div>
+          <div class="credential-value">MBA, Portland State University</div>
         </div>
         <div>
           <div class="credential-label">Education</div>
-          <div class="credential-value">BS, Marketing Strategy</div>
+          <div class="credential-value">BS, Marketing Strategy & Advertising Management, Portland State University</div>
         </div>
         <div>
           <div class="credential-label">Based In</div>

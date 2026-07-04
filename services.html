@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Telesterion Advisory</title>
+<meta name="description" content="Strategic planning, partnership building, communications, turnarounds, operational transformation, and executive coaching for businesses of every size.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --green-dark: #04342C;
+    --green-mid: #085041;
+    --green-sec: #0F6E56;
+    --green-accent: #5DCAA5;
+    --ink-soft: #3d3930;
+    --ink-muted: #7a7468;
+    --sand: #f5f0e8;
+    --sand-deep: #e8e0d0;
+    --gold: #b8924a;
+    --gold-light: #d4ad6e;
+    --white: #fdfaf5;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background: rgba(253, 250, 245, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, padding 0.3s;
+  }
+  nav.scrolled { border-bottom-color: var(--sand-deep); padding: 1rem 4rem; }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--white) !important;
+    background: var(--ink);
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
+
+  /* PAGE HEADER */
+  .page-header { background: var(--sand); padding: 11rem 4rem 5rem; }
+  .page-header-inner { max-width: 640px; }
+
+  .page-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .page-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .page-title em { font-style: italic; color: var(--gold); }
+
+  .page-subtitle {
+    color: var(--ink-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+    max-width: 540px;
+  }
+
+  /* SECTION BASE */
+  section { padding: 7rem 4rem; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  /* SERVICES GRID */
+  #services-list { background: var(--white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--sand-deep);
+    border: 1px solid var(--sand-deep);
+    margin-top: 1rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.75rem 2.25rem;
+    position: relative;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .service-card:hover { background: var(--ink); }
+  .service-card:hover .service-num,
+  .service-card:hover .service-name,
+  .service-card:hover .service-desc { color: var(--white); }
+  .service-card:hover .service-name { color: var(--gold-light); }
+  .service-card:hover .service-line { background: var(--gold); }
+
+  .service-num {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+    transition: color 0.25s;
+  }
+  .service-line {
+    width: 30px;
+    height: 1px;
+    background: var(--sand-deep);
+    margin-bottom: 1.5rem;
+    transition: background 0.25s;
+  }
+  .service-name {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    transition: color 0.25s;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    transition: color 0.25s;
+  }
+
+  /* WHO IT'S FOR */
+  #who { background: var(--sand); }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .who-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 2.5rem;
+    border-bottom: 3px solid var(--gold);
+  }
+  .who-name {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .who-desc {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    line-height: 1.8;
+  }
+
+  /* CTA STRIP */
+  #cta {
+    background: var(--ink);
+    color: var(--white);
+    text-align: center;
+    padding: 6rem 4rem;
+  }
+  #cta .section-label { color: var(--gold-light); justify-content: center; }
+  #cta .section-label::before { background: var(--gold); }
+  #cta .section-title { color: var(--white); }
+  #cta p { color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto 2rem; font-size: 0.95rem; line-height: 1.8; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 1rem 2.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.25s, transform 0.2s;
+    font-family: var(--sans);
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: #110f0e;
+    color: rgba(255,255,255,0.4);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.7); }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.25rem 2rem; }
+    .nav-links { display: none; }
+    section, .page-header { padding: 8rem 2rem 4rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .who-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" style="font-family: var(--serif); font-weight:600; font-size:1.25rem; color:#04342C; text-decoration:none;">Telesterion<span style="color:#b8924a;">.</span><span style="font-size:0.55rem; letter-spacing:0.2em; color:#0F6E56; margin-left:0.4rem; vertical-align:middle; font-family:var(--sans);">ADVISORY</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="about.html#team">Team</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner fade-up">
+    <div class="page-eyebrow">What We Do</div>
+    <h1 class="page-title">Services built<br>for <em>growth</em></h1>
+    <p class="page-subtitle">As a business generalist, Telesterion Advisory works with startups and established organizations alike. Every engagement centers on three core strengths: strategy, communications, and partnerships.</p>
+  </div>
+</div>
+
+<!-- SERVICES LIST -->
+<section id="services-list">
+  <div class="fade-up">
+    <div class="section-label">The Work</div>
+    <h2 class="section-title">Six ways<br><em>we help</em></h2>
+  </div>
+
+  <div class="services-grid fade-up">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-line"></div>
+      <div class="service-name">Strategic Planning</div>
+      <div class="service-desc">Comprehensive business strategy development, competitive analysis, and roadmap creation that aligns your vision with market reality.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-line"></div>
+      <div class="service-name">Stakeholder Engagement & Partnership Building</div>
+      <div class="service-desc">Identifying, cultivating, and structuring the relationships that move organizations forward — from community partners to institutional allies and funders.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-line"></div>
+      <div class="service-name">Communications & Advertising</div>
+      <div class="service-desc">Crafting the messages, channels, and campaigns that build trust, grow audiences, and position your organization with clarity and conviction.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-line"></div>
+      <div class="service-name">Turnarounds</div>
+      <div class="service-desc">For going concerns that have lost momentum — we diagnose what's holding the organization back and build a clear path to renewed health and performance.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-line"></div>
+      <div class="service-name">Operational Transformation</div>
+      <div class="service-desc">Process improvement, organizational design, and systems implementation to build a business that scales efficiently.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-line"></div>
+      <div class="service-name">Executive Coaching</div>
+      <div class="service-desc">One-to-one advisory for founders and senior leaders navigating complex decisions, team challenges, and growth inflections.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who">
+  <div class="fade-up">
+    <div class="section-label">Who We Work With</div>
+    <h2 class="section-title">Two kinds of<br><em>organizations</em></h2>
+  </div>
+
+  <div class="who-grid fade-up">
+    <div class="who-card">
+      <div class="who-name">Startups Finding Their Footing</div>
+      <div class="who-desc">Organizations building from scratch, who need a strategy grounded in market reality — not just ambition — and a partner who can help them find their first real traction.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-name">Established Organizations Ready for a Turnaround</div>
+      <div class="who-desc">Going concerns that have lost momentum, clarity, or direction, and need an honest diagnosis and a clear path back to health and performance.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="fade-up">
+    <div class="section-label">How We Work</div>
+    <h2 class="section-title">Curious how an<br><em>engagement unfolds?</em></h2>
+    <p>Every project follows the same proven, five-step model — from first conversation to lasting results.</p>
+    <a href="process.html" class="btn-primary">See Our Process</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Telesterion<span>.</span> Advisory</div>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div>© 2026 Telesterion Advisory. All rights reserved.</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

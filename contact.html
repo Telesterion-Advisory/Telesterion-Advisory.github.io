@@ -56,8 +56,30 @@
   }
   nav.scrolled { border-bottom-color: var(--sand-deep); padding: 1rem 4rem; }
 
-  .nav-logo { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; letter-spacing: 0.02em; color: var(--ink); text-decoration: none; }
-  .nav-logo span { color: var(--gold); }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+  }
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .nav-logo-word {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  .nav-logo-sub {
+    font-family: var(--sans);
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    color: #0F6E56;
+    margin-top: 1px;
+  }
 
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
@@ -211,8 +233,15 @@
     font-size: 0.78rem;
     letter-spacing: 0.04em;
   }
-  .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.7); }
-  .footer-logo span { color: var(--gold); }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+  }
   .footer-links { display: flex; gap: 2rem; list-style: none; }
   .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
@@ -306,7 +335,22 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo" style="font-family: var(--serif); font-weight:600; font-size:1.25rem; color:#04342C; text-decoration:none;">Telesterion<span style="color:#b8924a;">.</span><span style="font-size:0.55rem; letter-spacing:0.2em; color:#0F6E56; margin-left:0.4rem; vertical-align:middle; font-family:var(--sans);">ADVISORY</span></a>
+  <a href="index.html" class="nav-logo">
+    <svg width="59" height="30" viewBox="-145 -75 255 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+      <line x1="-118.6" y1="17.8" x2="-110.6" y2="9.8" stroke="#085041" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-110.6" y1="9.8" x2="-78.6" y2="-17" stroke="#085041" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-78.6" y1="-17" x2="-40.6" y2="-17" stroke="#085041" stroke-width="7" stroke-linecap="round"/>
+      <line x1="40.6" y1="-17" x2="86" y2="-55" stroke="#085041" stroke-width="7" stroke-linecap="round"/>
+      <line x1="86" y1="-55" x2="98" y2="-67" stroke="#085041" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="44" fill="#085041"/>
+      <circle cx="0" cy="0" r="49" fill="none" stroke="#085041" stroke-width="1" opacity="0.18"/>
+      <text x="0" y="1" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="white" text-anchor="middle" dominant-baseline="central">T</text>
+    </svg>
+    <span class="nav-logo-text">
+      <span class="nav-logo-word">Telesterion</span>
+      <span class="nav-logo-sub">ADVISORY</span>
+    </span>
+  </a>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
@@ -386,7 +430,19 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Telesterion<span>.</span> Advisory</div>
+  <div class="footer-logo">
+    <svg width="51" height="26" viewBox="-145 -75 255 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+      <line x1="-118.6" y1="17.8" x2="-110.6" y2="9.8" stroke="white" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-110.6" y1="9.8" x2="-78.6" y2="-17" stroke="white" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-78.6" y1="-17" x2="-40.6" y2="-17" stroke="white" stroke-width="7" stroke-linecap="round"/>
+      <line x1="40.6" y1="-17" x2="86" y2="-55" stroke="white" stroke-width="7" stroke-linecap="round"/>
+      <line x1="86" y1="-55" x2="98" y2="-67" stroke="white" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="44" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="0" cy="0" r="49" fill="none" stroke="white" stroke-width="0.75" opacity="0.3"/>
+      <text x="0" y="1" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="white" text-anchor="middle" dominant-baseline="central">T</text>
+    </svg>
+    <span>Telesterion <span style="color:#5DCAA5;">Advisory</span></span>
+  </div>
   <ul class="footer-links">
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>

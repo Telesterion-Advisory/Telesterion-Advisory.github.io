@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+  <circle cx="28" cy="28" r="26" fill="#085041"/>
+  <circle cx="28" cy="28" r="29" fill="none" stroke="#085041" stroke-width="1" opacity="0.18"/>
+  <text x="28" y="29.5" font-family="Georgia, 'Liberation Serif', 'Times New Roman', serif" font-size="30" fill="white" text-anchor="middle" dominant-baseline="central">T</text>
+</svg>

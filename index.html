@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -491,6 +492,54 @@
     color: var(--ink-muted);
     line-height: 1.7;
     transition: color 0.25s;
+  }
+
+  /* TIMELY WORK */
+  #timely {
+    background: var(--green-dark);
+    padding: 5rem 4rem;
+    color: var(--white);
+  }
+  #timely .section-label { color: var(--green-accent); }
+  #timely .section-label::before { background: var(--gold); }
+  .timely-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+  }
+  .timely-headline {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+  }
+  .timely-headline em { font-style: italic; color: var(--gold-light); }
+  .timely-body p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .timely-body p:last-of-type { margin-bottom: 2rem; }
+  .btn-timely {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.9rem 2.25rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-timely:hover { background: var(--gold-light); transform: translateY(-1px); }
+  @media (max-width: 900px) {
+    .timely-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
 
   /* PROCESS */
@@ -1131,21 +1180,21 @@
 <!-- MARQUEE -->
 <div class="marquee-strip">
   <div class="marquee-inner">
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Jewelry &amp; Retail</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Makers &amp; Retail</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Behavioral Health</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Arts &amp; Performance</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Psychotherapy</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Acupuncture &amp; Wellness</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Music &amp; Venues</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Mortgage &amp; Finance</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Medicine</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Real Estate</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Nonprofit &amp; Mission-Driven</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Jewelry &amp; Retail</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Makers &amp; Retail</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Behavioral Health</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Arts &amp; Performance</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Psychotherapy</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Acupuncture &amp; Wellness</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Music &amp; Venues</span>
-    <span class="marquee-item"><span class="marquee-dot">◆</span> Mortgage &amp; Finance</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Medicine</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Real Estate</span>
     <span class="marquee-item"><span class="marquee-dot">◆</span> Nonprofit &amp; Mission-Driven</span>
   </div>
 </div>
@@ -1155,14 +1204,29 @@
   <div class="about-text fade-up">
     <div class="section-label">Our Story</div>
     <h2 class="section-title">An ancient idea.<br><em>A modern practice.</em></h2>
-    <p>The Telesterion was a great hall near ancient Athens where something remarkable happened. For more than 2,000 years people of every walk of life — young and old, regardless of gender or social status, slaves to emperors — would enter, and leave changed. They returned home to all corners of the world carrying new knowledge, purpose, and fearlessness that benefited everyone around them.</p>
-    <p>That journey was an inflection point in their lives — and those who made it were never the same. This is exactly what happens when business and nonprofit leaders go from working reactively to unlocking the power of strategic planning. Telesterion Advisory exists to create those moments for organizations of every kind: startups building from scratch, and established organizations ready for a turnaround. As a business generalist, we work across industries and challenges, with particular depth in strategy, communications, and partnerships — the three levers that most reliably free owners and directors to do what they do best.</p>
+    <p>The Telesterion was a great hall 12 miles west of ancient Athens where something remarkable happened. For more than 2,000 years people of every walk of life — without regard to gender, age, or social status, slaves to emperors — would enter, and leave changed. They returned home to all corners of the world carrying new knowledge, purpose, and a fearlessness that benefited their communities.</p>
+    <p>This is exactly what happens when business and nonprofit leaders go from working reactively to unlocking the power of strategic action. Telesterion Advisory exists to create these moments for organizations of every kind: startups building from scratch, and established organizations ready for a turnaround. As business generalists, we work across industries and challenges, with particular depth in the medical, behavioral health, and wellness industries.</p>
   </div>
 
   <div class="about-visual fade-up">
     <div class="about-card">
       <p class="quote-text">"Business strategy isn't only for large organizations. It's the difference between drifting and moving with intention — and every organization deserves that."</p>
       <div class="quote-attr">— Joe Bazeghi, Founder, Telesterion Advisory</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELY -->
+<section id="timely">
+  <div class="section-label fade-up">Current Focus</div>
+  <div class="timely-grid">
+    <div class="fade-up">
+      <h2 class="timely-headline">Timely work for a <em>critical moment</em></h2>
+    </div>
+    <div class="timely-body fade-up">
+      <p>Behavioral health and medical organizations across Oregon are navigating an unprecedented convergence of pressures — Medicaid census volatility, shifting payer relationships, and the sweeping implications of HB1. For directors and boards managing Medicaid-intensive caseloads, the window to act strategically is now.</p>
+      <p>Telesterion Advisory is working actively with organizations on census protection, payer mix analysis and diversification, revenue strategy, and structural solutions — including B Corp spinoffs that allow nonprofits to serve private-insurance clients without jeopardizing their tax-exempt status.</p>
+      <a href="#contact" class="btn-timely">Let's Talk</a>
     </div>
   </div>
 </section>
@@ -1211,8 +1275,8 @@
     <div class="service-card">
       <div class="service-num">06</div>
       <div class="service-line"></div>
-      <div class="service-name">Executive Coaching</div>
-      <div class="service-desc">One-to-one advisory for founders and senior leaders navigating complex decisions, team challenges, and growth inflections.</div>
+      <div class="service-name">New Organization Launch</div>
+      <div class="service-desc">From idea to operating organization — we guide new ventures and nonprofit boards through every stage of formation: entity structure, state filings, licensing, corporate governance, bank accounts, and a full business plan covering operations, finance, and marketing.</div>
     </div>
   </div>
 </section>
@@ -1278,7 +1342,7 @@
   </div>
 
   <div class="contact-right fade-up">
-    <form class="contact-form" action="https://formspree.io/f/xgojdwpv" method="POST" onsubmit="handleSubmit(event)">
+    <form class="contact-form" action="https://formspree.io/f/xgojdwpv" method="POST">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <div class="form-field">
@@ -1307,7 +1371,8 @@
           <option>Communications & Advertising</option>
           <option>Turnarounds</option>
           <option>Operational Transformation</option>
-          <option>Executive Coaching</option>
+          <option>New Organization Launch</option>
+          <option>Medicaid Census & Payer Mix Optimization</option>
           <option>Not sure yet / Other</option>
         </select>
       </div>
